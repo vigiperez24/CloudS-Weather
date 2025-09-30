@@ -170,6 +170,11 @@ function WeatherOverview() {
             placeholder="Search your State / Province / City / Country"
             value={city}
             onChange={(e) => setCity(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                fetchWeather();
+              }
+            }}
           />
         </div>
 
