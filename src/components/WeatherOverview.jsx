@@ -21,8 +21,8 @@
 import { useTheme } from "./ThemeContext";
 import React, { useContext, useState } from "react";
 import { WeatherContext } from "./WeatherContext";
-import UVIndex from "../components/weatherOverviewData/uvIndex";
-import ErrorMsg from "./weatherOverviewData/errorMsg";
+import UVIndex from "./WeatherOverviewData/uvIndex";
+import ErrorMsg from "./WeatherOverviewData/errorMsg";
 
 // Weather condition background images
 import rainy from "../assets/background/rainy.png";
@@ -33,7 +33,7 @@ import snow from "../assets/background/snow.png";
 import Logo from "../assets/Logo/Logo.png";
 
 // Components
-import WeatherSkeleton from "./loadingSkeleton/WeatherSkeleton";
+import WeatherSkeleton from "./LoadingSkeleton/WeatherSkeleton";
 
 // Weather icons library
 import {
