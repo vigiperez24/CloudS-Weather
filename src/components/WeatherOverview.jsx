@@ -21,19 +21,19 @@
 import { useTheme } from "./ThemeContext";
 import React, { useContext, useState } from "react";
 import { WeatherContext } from "./WeatherContext";
-import UVIndex from "../components/WeatherOverviewData/UVIndex";
-import ErrorMsg from "../components/WeatherOverviewData/errorMsg";
+import UVIndex from "./weatherOverviewData/UVIndex";
+import ErrorMsg from "./weatherOverviewData/errorMsg";
 
 // Weather condition background images
-import rainy from "../assets/Background/rainy.png";
-import sunny from "../assets/Background/sunny.png";
-import cloudy from "/src/assets/Background/cloudy.png";
-import thunderStorm from "../assets/Background/thunderStorm.png";
-import snow from "../assets/Background/snow.png";
+import rainy from "../assets/background/rainy.png";
+import sunny from "../assets/background/sunny.png";
+import cloudy from "../assets/background/cloudy.png";
+import thunderStorm from "../assets/background/thunderStorm.png";
+import snow from "../assets/background/snow.png";
 import Logo from "../assets/Logo/Logo.png";
 
 // Components
-import WeatherSkeleton from "./LoadingSkeleton/WeatherSkeleton";
+import WeatherSkeleton from "./loadingSkeleton/WeatherSkeleton";
 
 // Weather icons library
 import {
