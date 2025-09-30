@@ -22,7 +22,7 @@ import { useTheme } from "./ThemeContext";
 import React, { useContext, useState } from "react";
 import { WeatherContext } from "./WeatherContext";
 import UVIndex from "./WeatherOverviewData/UVIndex";
-import ErrorMsg from "./WeatherOverviewData/ErrorMsg.jsx";
+import ErrorMsg from "./WeatherOverviewData/ErrorMsg";
 
 // Weather condition background images
 import rainy from "../assets/background/rainy.png";
