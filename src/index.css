@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  /* Base */
+  --color-main-bg: #ffffff; /* main  page background */
+  --color-bg: #f1f1f1; /* page background */
+  --color-text: #1a1a1a; /* main text */
+
+  /* Brand / UI */
+  --color-primary: #2563eb; /* blue accent */
+  --color-primary-text: #1a1a1a; /* text on primary */
+  --color-card-hover: #b5b9bd; /* light gray panels/cards */
+  --color-secondary: rgb(205, 209, 212); /* light gray panels/cards */
+  --color-secondary-text: #334155;
+
+  /* States */
+  --color-border: #e2e8f0; /* dividers, borders */
+  --color-muted: #64748b; /* subtle text (placeholder, hint) */
+
+  /* Image gradient */
+  --gradient-start: color-mix(in srgb, white 60%, transparent);
+  --gradient-mid: color-mix(in srgb, white 30%, transparent);
+}
+
+[data-theme="dark"] {
+  --color-main-bg: #16233f; /* main  page background */
+  --color-bg: #0f172a; /* page background */
+  --color-text: #f8fafc; /* main text */
+
+  --color-primary: #3b82f6; /* blue accent (slightly lighter for dark) */
+  --color-primary-text: #ffffff;
+  --color-secondary: #1e293b; /* card / panel background */
+  --color-card-hover: #222e42; /* Hover card / panel background */
+  --color-secondary-text: #e2e8f0;
+
+  --color-border: #334155;
+  --color-muted: #94a3b8;
+
+  /* Image Gradient */
+  --gradient-start: color-mix(in srgb, black 60%, transparent);
+  --gradient-mid: color-mix(in srgb, black 30%, transparent);
+}
+
+/* PlaceHolder text */
+/* global.css */
+.placeholder-clamp::placeholder {
+  font-size: clamp(10px, 2vw, 16px);
+}
