@@ -32,8 +32,9 @@ export function WeatherProvider({ children }) {
         try {
           // Fetch weather data from backend API using lat/lon
           const res = await fetch(
-            `http://localhost:5000/api/weather?lat=${latitude}&lon=${longitude}`
+            `https://clouds-weather-gno6.onrender.com/api/weather?lat=${latitude}&lon=${longitude}`
           );
+
           const data = await res.json();
 
           // If response is OK, update context states

@@ -103,7 +103,9 @@ function WeatherOverview() {
     setLoading(true);
     setError("");
     try {
-      const response = await fetch(`http://localhost:5000/api/weather/${city}`);
+      const response = await fetch(
+        `https://clouds-weather-gno6.onrender.com/api/weather/${city}`
+      );
       const data = await response.json();
 
       if (response.ok) {
