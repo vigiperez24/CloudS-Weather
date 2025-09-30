@@ -25,11 +25,11 @@ import UVIndex from "./WeatherOverviewData/UVIndex";
 import ErrorMsg from "./WeatherOverviewData/error";
 
 // Weather condition background images
-import rainy from "../assets/background/rainy.png";
-import sunny from "../assets/background/sunny.png";
-import cloudy from "../assets/background/cloudy.png";
-import thunderStorm from "../assets/background/thunderStorm.png";
-import snow from "../assets/background/snow.png";
+import rainy from "../assets/weatherBackground/rainy.png";
+import sunny from "../assets/weatherBackground/sunny.png";
+import cloudy from "../assets/weatherBackground/cloudy.png";
+import thunderStorm from "../assets/weatherBackground/thunderStorm.png";
+import snow from "../assets/weatherBackground/snow.png";
 import Logo from "../assets/Logo/Logo.png";
 
 // Components
