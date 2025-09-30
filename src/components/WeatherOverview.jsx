@@ -21,7 +21,7 @@
 import { useTheme } from "./ThemeContext";
 import React, { useContext, useState } from "react";
 import { WeatherContext } from "./WeatherContext";
-import UVIndex from "./weatherOverviewData/UVIndex";
+import UVIndex from "./weatherOverviewData/uvIndex";
 import ErrorMsg from "./weatherOverviewData/errorMsg";
 
 // Weather condition background images
