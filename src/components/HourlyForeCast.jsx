@@ -162,7 +162,7 @@ function HourlyForeCast() {
         </div>
 
         {/* Two-column layout: icon + RealFeel on left, metrics on right */}
-        <div className="grid grid-cols-2 py-2">
+        <div className="grid grid-cols-1 py-2 md:grid-cols-2">
           {/* Left Column - RealFeel Icon + Temp */}
           <div className="flex space-x-2 items-center justify-center text-[var(--color-text)] flex-col">
             <i>
@@ -175,27 +175,29 @@ function HourlyForeCast() {
           </div>
 
           {/* Right Column - Weather Metrics */}
-          <div className="text-[var(--color-text)]">
+          <div className="text-[var(--color-text)] ">
             <div className="flex justify-between items-center border-gray-400 border-b-1 py-2">
               <p className="tracking-wider">RealFeel Shade</p>
               <span className="font-bold">{weatherData.realFeelShade}°</span>
             </div>
-            <div className="flex justify-between items-center border-gray-400 border-b-1 py-2">
-              <p className="tracking-wider">Wind</p>
-              <span className="font-bold">
-                {" "}
-                {weatherData.windSpeed}° km/h NE{" "}
-              </span>
-            </div>
-            <div className="flex justify-between items-center border-gray-400 border-b-1 py-2">
-              <p className="tracking-wider">Wind Gusts</p>
-              <span className="font-bold">{weatherData.windGusts} km/h</span>
-            </div>
-            <div className="flex justify-between items-center border-gray-400 border-b-1 py-2">
-              <p className="tracking-wider">Wind Direction</p>
-              <span className="font-bold text-green-500">
-                {weatherData.windDirectionFull}
-              </span>
+            <div>
+              <div className="flex justify-between items-center border-gray-400 border-b-1 py-2">
+                <p className="tracking-wider">Wind</p>
+                <span className="font-bold">
+                  {" "}
+                  {weatherData.windSpeed}° km/h NE{" "}
+                </span>
+              </div>
+              <div className="flex justify-between items-center border-gray-400 border-b-1 py-2">
+                <p className="tracking-wider">Wind Gusts</p>
+                <span className="font-bold">{weatherData.windGusts} km/h</span>
+              </div>
+              <div className="flex justify-between items-center border-gray-400 border-b-1 py-2">
+                <p className="tracking-wider">Wind Direction</p>
+                <span className="font-bold text-green-500">
+                  {weatherData.windDirectionFull}
+                </span>
+              </div>
             </div>
           </div>
         </div>
