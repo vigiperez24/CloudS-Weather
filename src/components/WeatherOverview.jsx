@@ -27,7 +27,7 @@ import ErrorMsg from "../components/WeatherOverviewData/errorMsg";
 // Weather condition background images
 import rainy from "../assets/Background/rainy.png";
 import sunny from "../assets/Background/sunny.png";
-import cloudy from "../assets/Background/cloudy.png";
+import cloudy from "/src/assets/Background/cloudy.png";
 import thunderStorm from "../assets/Background/thunderStorm.png";
 import snow from "../assets/Background/snow.png";
 import Logo from "../assets/Logo/Logo.png";
