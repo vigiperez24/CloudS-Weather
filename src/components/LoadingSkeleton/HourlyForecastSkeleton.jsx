@@ -86,7 +86,7 @@ function HourlyForecastSkeleton() {
       </div>
 
       {/* ========== Centered Loading Spinner Overlay ========== */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center bg-[var(--color-bg)]/80 backdrop-blur-sm">
+      <div className="absolute inset-0 flex flex-col items-center justify-center bg-[var(--color-bg)]/10 backdrop-blur-sm">
         {/* Spinning Circle */}
         <div className="w-16 h-16 border-4 border-[var(--color-accent)] border-t-transparent rounded-full animate-spin"></div>
         
