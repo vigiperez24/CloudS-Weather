@@ -88,27 +88,26 @@
 import React, { createContext, useState, useEffect } from "react";
 
 // ========== Create Weather Context ==========
-// Provides shared access to weather data across components.
 export const WeatherContext = createContext();
 
 // ========== Weather Provider Component ==========
-// Wraps children with context and handles weather data fetching.
 export function WeatherProvider({ children }) {
   // ========== State Definitions ==========
-  const [weatherData, setWeatherData] = useState(null); // Full weather response
-  const [hourly, setHourly] = useState([]); // Hourly forecast data
-  const [daily, setDaily] = useState([]); // 14-day forecast data
-  const [loading, setLoading] = useState(true); // Loading state
-  const [error, setError] = useState(""); // Error message
+  const [weatherData, setWeatherData] = useState(null);
+  const [hourly, setHourly] = useState([]);
+  const [daily, setDaily] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [locationFetched, setLocationFetched] = useState(false); // Tracks if real location was used
 
   // ========== Manila Fallback Coordinates ==========
   const fallbackCoords = {
-    latitude: 14.5995, // Manila
+    latitude: 14.5995,
     longitude: 120.9842,
   };
 
   // ========== Reusable Weather Fetch Function ==========
-  const fetchWeather = async (latitude, longitude) => {
+  const fetchWeather = async (latitude, longitude, override = false) => {
     try {
       const res = await fetch(
         `https://clouds-weather-gno6.onrender.com/api/weather?lat=${latitude}&lon=${longitude}`
@@ -119,32 +118,39 @@ export function WeatherProvider({ children }) {
         setWeatherData(data);
         setHourly(data.hourly || []);
         setDaily(data.daily || []);
+        if (override) setLocationFetched(true); // Mark override only if real location
       } else {
         setError(data.error || "Something went wrong");
       }
     } catch {
       setError("Network error or server is down");
     } finally {
-      setLoading(false);
+      // Stop loading only after fallback or location override
+      if (!locationFetched || override) {
+        setTimeout(() => setLoading(false), 800); // Slight delay for smoother UX
+      }
     }
   };
 
-  // ========== Auto-fetch Weather on Mount ==========
+  // ========== Fetch Manila Immediately ==========
+  useEffect(() => {
+    fetchWeather(fallbackCoords.latitude, fallbackCoords.longitude);
+  }, []);
+
+  // ========== Try Geolocation in Background ==========
   useEffect(() => {
     if (!("geolocation" in navigator)) {
       setError("Geolocation not supported, showing Manila weather");
-      fetchWeather(fallbackCoords.latitude, fallbackCoords.longitude);
       return;
     }
 
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         const { latitude, longitude } = pos.coords;
-        fetchWeather(latitude, longitude);
+        fetchWeather(latitude, longitude, true); // Override Manila
       },
       () => {
         setError("Location access denied, showing Manila weather");
-        fetchWeather(fallbackCoords.latitude, fallbackCoords.longitude);
       },
       { enableHighAccuracy: true, timeout: 10000 }
     );
@@ -170,4 +176,3 @@ export function WeatherProvider({ children }) {
     </WeatherContext.Provider>
   );
 }
-
