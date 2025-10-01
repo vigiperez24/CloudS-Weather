@@ -237,7 +237,7 @@ export function WeatherProvider({ children }) {
         fetchWeather(latitude, longitude, true);
       },
       () => {
-        setError("Location access denied, showing Manila weather");
+        setError("Location access denied. Please enable location to view your current weather.");
       },
       { enableHighAccuracy: true, timeout: 10000 }
     );
