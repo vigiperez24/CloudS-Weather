@@ -214,7 +214,7 @@ export function WeatherProvider({ children }) {
       setError("Network error or server is down");
     } finally {
       if (!locationFetched || override) {
-        setTimeout(() => setLoading(false), 800);
+        setTimeout(() => setLoading(false));
       }
     }
   };
@@ -239,7 +239,7 @@ export function WeatherProvider({ children }) {
       () => {
         setError("Location access denied. Please enable location to view your current weather.");
       },
-      { enableHighAccuracy: true, timeout: 10000 }
+      { enableHighAccuracy: true } //, timeout: 10000
     );
   }, []);
 
