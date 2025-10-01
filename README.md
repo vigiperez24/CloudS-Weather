@@ -46,10 +46,4 @@ A modern, responsive weather application that provides **real-time weather infor
 
 ---
 
-## 📦 Installation
 
-### Prerequisites
-
-- **Node.js** (v14 or higher)
-- **npm** or **yarn**
-- **WeatherAPI.com API key**
