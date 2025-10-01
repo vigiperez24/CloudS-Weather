@@ -5,11 +5,9 @@ import React from "react";
 // Mimics the layout of the WeatherOverview component for smooth UX.
 function WeatherSkeleton() {
   return (
-    <div>
-      {" "}
+    <div className="relative">
       {/* Main container with pulse animation */}
       <div className="p-6 flex flex-col gap-8 rounded-md bg-[var(--color-secondary)]/50 animate-pulse">
-        
         {/* ========== Location Skeleton ========== */}
         {/* Simulates location icon + city name + country */}
         <div className="flex items-center justify-between w-full">
@@ -53,6 +51,17 @@ function WeatherSkeleton() {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* ========== Centered Loading Spinner Overlay ========== */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center bg-[var(--color-bg)]/80 backdrop-blur-sm rounded-md">
+        {/* Spinning Circle */}
+        <div className="w-16 h-16 border-4 border-[var(--color-accent)] border-t-transparent rounded-full animate-spin"></div>
+
+        {/* Loading Text */}
+        <p className="mt-4 text-[var(--color-text-secondary)] text-sm font-medium animate-pulse">
+          Loading...
+        </p>
       </div>
     </div>
   );

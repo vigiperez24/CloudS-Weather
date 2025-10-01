@@ -160,41 +160,56 @@ function HourlyForeCast() {
           </div>
           <p className="text-[var(--color-text)]">{weatherData.localTime}</p>
         </div>
-
         {/* Two-column layout: icon + RealFeel on left, metrics on right */}
         <div className="grid grid-cols-1 py-2 md:grid-cols-2">
           {/* Left Column - RealFeel Icon + Temp */}
           <div className="flex space-x-2 items-center justify-center text-[var(--color-text)] flex-col">
             <i>
-              <WiCloudy size={100} />
+              <WiCloudy
+                size={100}
+                className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28"
+              />
             </i>
             <div className="text-[var(--color-text)] text-center">
-              <p className="font-bold text-5xl">{weatherData.realFeel}°</p>
-              <p>RealFeel</p>
+              <p className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                {weatherData.realFeel}°
+              </p>
+              <p className="text-sm sm:text-base md:text-lg">RealFeel</p>
             </div>
           </div>
 
           {/* Right Column - Weather Metrics */}
-          <div className="text-[var(--color-text)] ">
+          <div className="text-[var(--color-text)]">
             <div className="flex justify-between items-center border-gray-400 border-b-1 py-2">
-              <p className="tracking-wider">RealFeel Shade</p>
-              <span className="font-bold">{weatherData.realFeelShade}°</span>
+              <p className="tracking-wider text-xs sm:text-sm md:text-base">
+                RealFeel Shade
+              </p>
+              <span className="font-bold text-sm sm:text-base md:text-lg">
+                {weatherData.realFeelShade}°
+              </span>
             </div>
             <div>
               <div className="flex justify-between items-center border-gray-400 border-b-1 py-2">
-                <p className="tracking-wider">Wind</p>
-                <span className="font-bold">
-                  {" "}
-                  {weatherData.windSpeed}° km/h NE{" "}
+                <p className="tracking-wider text-xs sm:text-sm md:text-base">
+                  Wind
+                </p>
+                <span className="font-bold text-sm sm:text-base md:text-lg">
+                  {weatherData.windSpeed}° km/h NE
                 </span>
               </div>
               <div className="flex justify-between items-center border-gray-400 border-b-1 py-2">
-                <p className="tracking-wider">Wind Gusts</p>
-                <span className="font-bold">{weatherData.windGusts} km/h</span>
+                <p className="tracking-wider text-xs sm:text-sm md:text-base">
+                  Wind Gusts
+                </p>
+                <span className="font-bold text-sm sm:text-base md:text-lg">
+                  {weatherData.windGusts} km/h
+                </span>
               </div>
               <div className="flex justify-between items-center border-gray-400 border-b-1 py-2">
-                <p className="tracking-wider">Wind Direction</p>
-                <span className="font-bold text-green-500">
+                <p className="tracking-wider text-xs sm:text-sm md:text-base">
+                  Wind Direction
+                </p>
+                <span className="font-bold text-green-500 text-sm sm:text-base md:text-lg">
                   {weatherData.windDirectionFull}
                 </span>
               </div>

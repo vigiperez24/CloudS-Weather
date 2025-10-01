@@ -159,7 +159,7 @@ function WeatherOverview() {
       */}
       <div className="flex w-full space-x-5 items-center z-10">
         {/* Application Logo */}
-        <img className=" w-17" src={Logo} alt="Logo " />
+        <img className="hidden md:flex w-17" src={Logo} alt="Logo " />
 
         {/* Search Input Field */}
         <div className="flex relative w-full">
@@ -181,12 +181,14 @@ function WeatherOverview() {
         </div>
 
         {/* Search Submit Button */}
-        <button
-          onClick={fetchWeather}
-          className="text-[var(--color-text)] bg-[var(--color-secondary)] p-3 rounded-md cursor-pointer hover:bg-[var(--color-card-hover)]"
-        >
-          Search
-        </button>
+        <div>
+          <button
+            onClick={fetchWeather}
+            className="text-[var(--color-text)] bg-[var(--color-secondary)] p-3 rounded-md cursor-pointer hover:bg-[var(--color-card-hover)]"
+          >
+            Search
+          </button>
+        </div>
 
         {/* Theme Toggle Button - Switches between light and dark mode */}
         <span

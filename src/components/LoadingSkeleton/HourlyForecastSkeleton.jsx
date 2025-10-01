@@ -1,11 +1,11 @@
 import React from "react";
 
 // ========== HourlyForecastSkeleton Component ==========
-// Displays animated placeholder UI while hourly, daily, and current weather data is loading.
-// Mimics the structure of the actual forecast sections for smooth visual transition.
+// Displays animated placeholder UI with centered loading spinner
+// while hourly, daily, and current weather data is loading.
 function HourlyForecastSkeleton() {
   return (
-    <div className="space-y-5">
+    <div className="relative space-y-5">
       {/* ========== 24-Hour Forecast Skeleton ========== */}
       <div className="bg-[var(--color-secondary)] p-4 rounded-md animate-pulse">
         <div className="flex flex-col gap-3">
@@ -83,6 +83,17 @@ function HourlyForecastSkeleton() {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* ========== Centered Loading Spinner Overlay ========== */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center bg-[var(--color-bg)]/80 backdrop-blur-sm">
+        {/* Spinning Circle */}
+        <div className="w-16 h-16 border-4 border-[var(--color-accent)] border-t-transparent rounded-full animate-spin"></div>
+        
+        {/* Loading Text */}
+        <p className="mt-4 text-[var(--color-text-secondary)] text-sm font-medium animate-pulse">
+          Loading...
+        </p>
       </div>
     </div>
   );

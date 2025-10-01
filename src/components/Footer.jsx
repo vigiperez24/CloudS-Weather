@@ -10,13 +10,13 @@ function Footer() {
       <div className="text-[var(--color-text)] space-y-2">
         {/* ========== Copyright Section ========== */}
         {/* Static year and project name for branding */}
-        <div className=" text-sm ">
+        <div className=" text-xs md:text-sm text-center ">
           <p>© 2025 Weather Dashboard. All rights reserved.</p>
         </div>
 
         {/* ========== API Attribution Section ========== */}
         {/* Credits WeatherAPI as the data source with link and description */}
-        <div className=" text-sm text-center space-y-2">
+        <div className="text-xs md:text-sm text-center space-y-2">
           <p>
             Powered by{" "}
             <a
@@ -28,7 +28,7 @@ function Footer() {
               WeatherAPI.com
             </a>
           </p>
-          <p className="text-slate-500 text-xs">
+          <p className="text-xs md:text-sm text-slate-500 ">
             Real-time weather data and forecasts for locations worldwide
           </p>
         </div>
@@ -43,7 +43,7 @@ function Footer() {
             className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group"
           >
             <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            <span className="text-sm">vigiperez24</span>
+            <span className="text-xs md:text-sm">vigiperez24</span>
           </a>
         </div>
       </div>
