@@ -25,7 +25,7 @@ function WeatherSkeleton() {
 
         {/* ========== Weather Cards Skeleton ========== */}
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {[...Array(4)].map((_, index) => (
+          {[...Array(6)].map((_, index) => (
             <div key={index} className="bg-[var(--color-secondary)]/90 p-3 rounded-md space-y-3">
               <div className="flex items-start gap-1">
                 <div className="w-6 h-6 bg-[var(--color-secondary)] rounded"></div>
